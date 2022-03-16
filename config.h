@@ -5,7 +5,7 @@
 #define     SERIAL_BAUD_RATE    115200							// Speed for USB serial console
 
 /* WiFi */
-const char* g_ssid = "${{ secrets.WIFI_SSID }}";							// Your WiFi SSID
+const char* g_ssid = "$Radiona";							// Your WiFi SSID
 const char* g_password = "123radiona";							// Your WiFi password
 #define     WIFI_ENABLE           true							// Enable WIFI
 
