@@ -112,7 +112,6 @@ public:
 
 FanModel FanControl;
 
-
 class LoopCycleModel
 {
 public:
