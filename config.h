@@ -5,18 +5,18 @@
 #define     SERIAL_BAUD_RATE    115200							// Speed for USB serial console
 
 /* WiFi */
-const char* g_ssid = "wifi_ssid";							// Your WiFi SSID
-const char* g_password = "wifi_pass";							// Your WiFi password
+const char* g_ssid = "Radiona";									// Your WiFi SSID
+const char* g_password = "123radiona";							// Your WiFi password
 #define     WIFI_ENABLE           true							// Enable WIFI
 
 /* MQTT */
 #define MQTT_HOST                 IPAddress(192,168,1,3)
 #define MQTT_PORT                 1883
 #define MQTT_ENABLE               true							// Enable MQTT
-const char* mqtt_user = "username";							// Your MQTT username		TestNet
-const char* mqtt_pass = "password";							// Your MQTT password		12344321
+const char* mqtt_user = "junkie";								// Your MQTT username		TestNet
+const char* mqtt_pass = "1234rm0HASSIOjunkie";					// Your MQTT password		12344321
 
-char g_mqtt_message_buffer[255];							// General purpose buffer for MQTT messages
+char g_mqtt_message_buffer[255];								// General purpose buffer for MQTT messages
 
 char MQTT_DEVICE_STATE_TOPIC[255];
 char MQTT_DEVICE_SIG_TOPIC[255];
