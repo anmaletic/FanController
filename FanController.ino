@@ -52,25 +52,25 @@ public:
 
     void IncreaseSpeed()
     {
-        if (FanControl.Speed + 5 > FanControl.SpeedMax)
+        if (Speed + 5 > SpeedMax)
         {
-            FanControl.Speed = FanControl.SpeedMax;
+            Speed = SpeedMax;
         }
         else
         {
-            FanControl.Speed += 5;
+            Speed += 5;
         }
     }
 
     void DecreaseSpeed()
     {
-        if (FanControl.Speed - 5 < FanControl.SpeedMin)
+        if (Speed - 5 < SpeedMin)
         {
-            FanControl.Speed = FanControl.SpeedMin;
+            Speed = SpeedMin;
         }
         else
         {
-            FanControl.Speed -= 5;
+            Speed -= 5;
         }
     }
 
