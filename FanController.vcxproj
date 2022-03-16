@@ -108,6 +108,7 @@
     <ClInclude Include="async_mqtt.h" />
     <ClInclude Include="async_wifi.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="example_config.h" />
     <ClInclude Include="__vm\.FanController.vsarduino.h" />
   </ItemGroup>
   <PropertyGroup>
