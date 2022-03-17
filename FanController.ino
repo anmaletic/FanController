@@ -168,9 +168,7 @@ void loop()
         LoopCycle.Last = LoopCycle.Current;
 
         FanControl.TempCurrent = int(dht.readTemperature()) + 1;
-
-        PublishData();
-
+               
         if (FanControl.State == 1)
         {
             if (FanControl.Mode == 1)
@@ -178,6 +176,8 @@ void loop()
                 TempRegulationAutomatic();
             }
         }
+
+        PublishData();
     }
 
     FanControl.SetSpeed();
@@ -191,7 +191,9 @@ void TempRegulationAutomatic()
         {
             FanControl.TempLast = FanControl.TempCurrent;
      
-            FanControl.IncreaseSpeed();            
+            FanControl.IncreaseSpeed();     
+
+            FanControl.TempCycle = 0;
         }
         else if (FanControl.TempCurrent == FanControl.TempLast)
         {
@@ -200,6 +202,8 @@ void TempRegulationAutomatic()
                 FanControl.TempLast = FanControl.TempCurrent;
 
                 FanControl.IncreaseSpeed();
+
+                FanControl.TempCycle = 0;
             }
             else
             {
@@ -214,6 +218,8 @@ void TempRegulationAutomatic()
             FanControl.TempLast = FanControl.TempCurrent;
 
             FanControl.DecreaseSpeed();
+
+            FanControl.TempCycle = 0;
         }
         else if (FanControl.TempCurrent == FanControl.TempLast)
         {
@@ -222,6 +228,8 @@ void TempRegulationAutomatic()
                 FanControl.TempLast = FanControl.TempCurrent;
 
                 FanControl.DecreaseSpeed();
+
+                FanControl.TempCycle = 0;
             }
             else
             {
@@ -238,8 +246,10 @@ void PublishData()
     JsonMsg["Mode"] = FanControl.Mode;
     JsonMsg["TempTarget"] = FanControl.TempTarget;
     JsonMsg["TempCurrent"] = FanControl.TempCurrent;
+    JsonMsg["TempLast"] = FanControl.TempLast;
     JsonMsg["FanState"] = FanControl.State;
     JsonMsg["FanSpeed"] = FanControl.Speed;
+    JsonMsg["TempCycle"] = FanControl.TempCycle;
 
     String message;
     serializeJson(JsonMsg, message);
